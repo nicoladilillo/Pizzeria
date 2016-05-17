@@ -20,8 +20,38 @@ ul.menu li {
 
 .footer {
   width: 100%;
-  padding: 50px;
-  margin: 0px;
+  padding: 25px;
+  margin-top: -2px;
   background-color: grey;
   text-align: center;
+}
+
+div.contents {
+  height: 600px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.home img {
+  padding: 0px;
+  margin: -2px;
+}
+
+.prima-immagine {
+  height: 600px;
+  width: 60%;
+}
+
+.seconda-immagine {
+  position: relative;
+  top: -379px;
+  width: 538px;
+}
+
+.terza-immagine {
+  position: relative;
+  width: 537px;
+  height: 380px;
+  left: 60%;
+  top: -380px;
 }
