@@ -1,0 +1,20 @@
+{
+  "name": "Pizzeria",
+  "homepage": "https://github.com/nicoladilillo/Pizzeria",
+  "authors": [
+    "Nicola Dilillo <nicoladilillo98@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
