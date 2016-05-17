@@ -1,6 +1,8 @@
 body {
   margin: 0px;
   padding: 0px;
+  color: white;
+  background-color: black;
 }
 
 h1 {
@@ -15,26 +17,24 @@ ul.menu {
 
 ul.menu li {
   display: inline;
-  padding: 70px;
+  padding: 25px 70px;
 }
 
 .footer {
   width: 100%;
   padding: 25px;
   margin-top: -2px;
-  background-color: grey;
+  background-color: #272424;
   text-align: center;
 }
 
 div.contents {
   height: 600px;
-  padding: 0px;
-  margin: 0px;
+  background-color: white;
 }
 
 .home img {
-  padding: 0px;
-  margin: -2px;
+  float: left;
 }
 
 .prima-immagine {
@@ -43,15 +43,21 @@ div.contents {
 }
 
 .seconda-immagine {
-  position: relative;
-  top: -379px;
-  width: 538px;
+  width: 40%;
+  height: 250px;
 }
 
 .terza-immagine {
-  position: relative;
-  width: 537px;
-  height: 380px;
-  left: 60%;
-  top: -380px;
+  width: 40%;
+  height: 350px;
+}
+
+.who-we-are {
+  color: black;
+  padding: 25px 0px;
+}
+
+.who-we-are div{
+  background-color: rgba(128,128,128,0.53);;
+  padding: 30px;
 }
