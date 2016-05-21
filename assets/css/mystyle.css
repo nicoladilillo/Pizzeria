@@ -7,29 +7,30 @@ body {
 
 h1 {
   text-align: center;
+  padding: 40px;
 }
 
-ul.menu {
-  margin: 0px;
+div.menu {
   background-color: rgb(171, 21, 10);
-  padding: 25px;
+  padding: 35px 0px;
 }
 
-ul.menu li {
-  display: inline;
-  padding: 25px 70px;
+div.menu a {
+  padding: 35px 50px;
+  color: white;
+  text-decoration: none;
+  border-right: solid 1px rgba(0, 0, 0, 0.22);
 }
 
 .footer {
-  width: 100%;
-  padding: 25px;
-  margin-top: -2px;
+  height: 50px;
+  padding: 22px;
   background-color: #272424;
   text-align: center;
 }
 
 div.contents {
-  height: 600px;
+  height: 700px;
   background-color: white;
 }
 
@@ -38,13 +39,13 @@ div.contents {
 }
 
 .prima-immagine {
-  height: 600px;
+  height: 700px;
   width: 60%;
 }
 
 .seconda-immagine {
   width: 40%;
-  height: 250px;
+  height: 350px;
 }
 
 .terza-immagine {
