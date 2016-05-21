@@ -1,24 +1,24 @@
 $(document).ready(function(){
 
-  $(".who-we-are").hide();;
+  $(".who-we-are").hide(100);;
   $(".home").show();
 
-  $("#1").click(function(){
-    $(".pizze").hide();
-    $(".who-we-are").hide();;
-    $(".home").show();
+  $("#1").click(function() {
+    $(".pizze").hide(100);
+    $(".who-we-are").hide(100);;
+    $(".home").show(100);
   });
 
-  $("#2").click(function(){
-    $(".home").hide();
-    $(".who-we-are").hide();
-    $(".pizze").show();
+  $("#2").click(function() {
+    $(".home").hide(100);
+    $(".who-we-are").hide(100);
+    $(".pizze").show(100);
   });
 
-  $("#3").click(function(){
-    $(".pizze").hide();
-    $(".home").hide();
-    $(".who-we-are").show();
+  $("#3").click(function() {
+    $(".pizze").hide(100);
+    $(".home").hide(100);
+    $(".who-we-are").show(100);
   });
 
 });
