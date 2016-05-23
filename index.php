@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+  session_start(); // Starting Session
+  // Store Session Data
+  $_SESSION['login_user']= $username;
+?>
+
+ <!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -28,7 +34,19 @@
       </div>
 
       <div class="pizze">
-        <
+
+        <form action="#" method="post" name="login_user">
+
+            <label>UserName :</label>
+            <input id="name" name="username" placeholder="username" type="text">
+
+            <label>Password :</label>
+            <input id="password" name="password" placeholder="**********" type="password">
+
+            <input name="submit" type="submit" value="Login ">
+
+        </form>
+        <?php include('login.php'); ?>
       </div>
 
       <div class="who-we-are">
