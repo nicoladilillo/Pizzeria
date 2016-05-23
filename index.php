@@ -1,10 +1,10 @@
 <?php
-  session_start(); // Starting Session
-  // Store Session Data
-  $_SESSION['login_user']= $username;
+  session_start();
+
+  $_SESSION['login_user']= $username;  // Initializing Session with value of PHP Variable
 ?>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -26,31 +26,23 @@
     <div class="contents">
 
       <div class="home">
-
           <img src="./assets/images/pizza_in_forno.jpg" class="prima-immagine">
           <img src="./assets/images/arredamento_pizzerie.jpg" class="seconda-immagine">
           <img src="./assets/images/ristorante_e_pizzeria.jpg" class="terza-immagine">
-
       </div>
 
       <div class="pizze">
-
-        <form action="#" method="post" name="login_user">
-
-            <label>UserName :</label>
-            <input id="name" name="username" placeholder="username" type="text">
-
-            <label>Password :</label>
-            <input id="password" name="password" placeholder="**********" type="password">
-
-            <input name="submit" type="submit" value="Login ">
-
-        </form>
-        <?php include('login.php'); ?>
+        <div class="login">
+          <form action="#" method="post">
+            UserName :<input name="username" placeholder="username" type="text" />
+            Password :<input name="password" placeholder="**********" type="password" />
+            <input name="submit" type="submit" value="Login " />
+          </form>
+          <?php include('login.php') ?>
+        </div>
       </div>
 
       <div class="who-we-are">
-
         <div>
           <h3>NOI E IL NOSTRO LAVORO</h3>
           <p>
@@ -59,7 +51,6 @@
             grazie al nuovo ed innivativo sito web.
           </p>
         </div>
-
       </div>
 
     </div>
