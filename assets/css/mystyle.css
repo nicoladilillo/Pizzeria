@@ -30,8 +30,11 @@ div.menu a {
 }
 
 div.contents {
-  height: 700px;
   background-color: white;
+}
+
+.home {
+  height: 700px;
 }
 
 .home img {
@@ -54,6 +57,7 @@ div.contents {
 }
 
 .who-we-are {
+  height: 550px;
   color: black;
   padding: 25px 0px;
 }
@@ -61,4 +65,45 @@ div.contents {
 .who-we-are div{
   background-color: rgba(128,128,128,0.53);;
   padding: 30px;
+}
+
+.elemento {
+  height: 200px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 50px;
+}
+
+.elemento img {
+  width: 180px;
+  height: 140px;
+  padding: 25px;
+  float: left;
+}
+
+.elemento div {
+  padding: 30px;
+}
+
+.elemento div.descrizione {
+  float: left;
+}
+
+.elemento div.prezzo {
+  position: relative;
+  top: 10px;
+  float: right;
+  width: 25px;
+}
+
+.elemento .prezzo p {
+  color: rgb(165, 29, 29);
+}
+
+.elemento .prezzo input {
+  width: 23px;
+}
+
+.domicilio {
+    font-size: 25px;
+  padding: 40px 375px;
 }

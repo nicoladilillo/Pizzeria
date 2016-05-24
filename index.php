@@ -41,7 +41,7 @@
                 </div>";
         }
         else {
-          echo $_SESSION['login_user'];
+          include("pizze.php");
         }
         ?>
       </div>

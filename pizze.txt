@@ -1,0 +1,4 @@
+margherita;;4,50;;pomodoro, mozzarella, olive;;./assets/images/margherita.jpg
+crudo;;6,00;;pomodoro, mozzarella, prosciutto crudo;;./assets/images/crudo.jpg
+messicana;;5,50;;pomodoro, mozzarella, salame piccante;;./assets/images/messicana.jpg
+wurstel;;5,00;;pomodoro, mozzarella, wurste;;./assets/images/wurstel.jpg
