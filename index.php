@@ -1,7 +1,5 @@
 <?php
   session_start();
-
-  $_SESSION['login_user']= $username;  // Initializing Session with value of PHP Variable
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +30,20 @@
       </div>
 
       <div class="pizze">
-        <div class="login">
-          <form action="#" method="post">
-            UserName :<input name="username" placeholder="username" type="text" />
-            Password :<input name="password" placeholder="**********" type="password" />
-            <input name="submit" type="submit" value="Login " />
-          </form>
-          <?php include('login.php') ?>
-        </div>
+        <?php
+        if(!isset($_SESSION['login_user'])) {
+          echo "<div class='login'>
+                  <form action='login.php' method='post'>
+                    UserName :<input name='username' placeholder='username' type='text' />
+                    Password :<input name='password' placeholder='**********' type='password' />
+                    <input name='submit' type='submit' value='Login' />
+                  </form>
+                </div>";
+        }
+        else {
+          echo $_SESSION['login_user'];
+        }
+        ?>
       </div>
 
       <div class="who-we-are">

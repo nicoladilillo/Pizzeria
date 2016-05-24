@@ -1,12 +1,12 @@
 body {
   margin: 0px;
   padding: 0px;
-  color: white;
   background-color: black;
 }
 
 h1 {
   text-align: center;
+  color: white;
   padding: 40px;
 }
 
