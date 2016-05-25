@@ -17,7 +17,7 @@
       if ($dati[0]==$username && $dati[1]==$password) {
           $trovate = true;
           $nome = $dati[2];
-          $_SESSION['login_user']=$username;
+          $_SESSION['login_user']=$nome;
       }
     }
   }

@@ -19,6 +19,7 @@
       <a href="#" id="1">Home</a>
       <a href="#" id="2">Pizze</a>
       <a href="#" id="3">Chi siamo</a>
+      <a><?php echo $_SESSION['login_user']; ?></a>
     </div>
 
     <div class="contents">
@@ -34,9 +35,14 @@
         if(!isset($_SESSION['login_user'])) {
           echo "<div class='login'>
                   <form action='login.php' method='post'>
-                    UserName :<input name='username' placeholder='username' type='text' />
-                    Password :<input name='password' placeholder='**********' type='password' />
-                    <input name='submit' type='submit' value='Login' />
+                    <input name='username' placeholder='username' type='text' />
+                    <input name='password' placeholder='**********' type='password' />
+                    <div class='accesso'>
+                      <input name='submit' type='submit' value='Sign in' />
+                      <form action='signup.php' method='post'>
+                        <input name='submit' type='submit' value='Sign up' />
+                      </form>
+                    </div>
                   </form>
                 </div>";
         }

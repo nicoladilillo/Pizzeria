@@ -25,7 +25,8 @@ div.menu a {
 .footer {
   height: 50px;
   padding: 22px;
-  background-color: #272424;
+  background-color: rgba(82, 75, 75, 0.71);
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
 }
 
@@ -106,4 +107,20 @@ div.contents {
 .domicilio {
     font-size: 25px;
   padding: 40px 375px;
+}
+
+.login {
+  padding: 100px 40%;
+}
+
+.login input {
+  width: 100%;
+  padding: 14px;
+  margin: 15px;
+}
+
+.accesso input {
+  width: 35%;
+  left: +40px;
+  position: relative;
 }

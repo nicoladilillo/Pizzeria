@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-  $(".pizze").hide(100);
+  $(".home").hide(100);
   $(".who-we-are").hide(100);
-  $(".home").show();
+  $(".pizze").show(100);
 
 
   $("#1").click(function() {
