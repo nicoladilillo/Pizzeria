@@ -18,17 +18,17 @@
             <input name="confermapassword" type="password" placeholder="conferma password" />
 
             <input name="nome" type="text" placeholder="nome" />
->
+
             <input name="cognome" type="text" placeholder="cognome" />
 
             <input name="email" type="text" placeholder="email" />
 
 
-        <div class="accesso">
-            <input type="submit" value="Registra"/>
+            <div class="accesso">
+                <input type="submit" value="Registra"/>
 
-            <input type="reset" value="Reset"/>
-        </div>
+                <input type="reset" value="Reset"/>
+            </div>
       </form>
 
       <?php
@@ -39,10 +39,10 @@
         $email=$_POST['email'];
         $conferma=$_POST['confermapassword'];
 
-        $idmiofile = fopen("Utenti.txt", "a+");
+        $idmiofile = fopen("utenti.txt", "a+");
 
         if (!$idmiofile) {
-        	die("Impossibile iscriversi al sito!");
+          echo "Impossibile iscriversi al sito!";
         }
         else {
           $trovate = false;

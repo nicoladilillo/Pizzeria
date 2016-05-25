@@ -123,4 +123,5 @@ div.contents {
   width: 35%;
   left: +40px;
   position: relative;
+  float: left;
 }

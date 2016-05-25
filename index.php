@@ -39,11 +39,11 @@
                     <input name='password' placeholder='**********' type='password' />
                     <div class='accesso'>
                       <input name='submit' type='submit' value='Sign in' />
+                  </form>
                       <form action='signup.php' method='post'>
                         <input name='submit' type='submit' value='Sign up' />
                       </form>
                     </div>
-                  </form>
                 </div>";
         }
         else {
