@@ -38,16 +38,16 @@
                     <input name='username' placeholder='username' type='text' />
                     <input name='password' placeholder='**********' type='password' />
                     <div class='accesso'>
-                      <input name='submit' type='submit' value='Sign in' />
+                        <input name='signin' type='submit' value='Sign in' />
                   </form>
-                      <form action='signup.php' method='post'>
-                        <input name='submit' type='submit' value='Sign up' />
-                      </form>
+                    <form action='signup.html'>
+                        <input name='signup' type='submit' value='Sign up' />
+                    </form>
                     </div>
                 </div>";
         }
         else {
-          include("pizze.php");
+          include('pizze.php');
         }
         ?>
       </div>
