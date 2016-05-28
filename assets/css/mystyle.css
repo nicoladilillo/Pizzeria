@@ -101,7 +101,7 @@ div.contents {
 }
 
 .elemento .prezzo input {
-  width: 23px;
+  width: 100%;
 }
 
 .domicilio {
