@@ -4,27 +4,24 @@
   $username=$_POST['username'];
   $password=$_POST['password'];
 
-  $idmiofile = fopen("utenti.txt", "r");
+  $host = getenv("MYSQL_HOST");
+  $pwd = getenv("MYSQL_PASSWORD");
+  echo "host: $host e password:$pwd";
 
-  if (!$idmiofile) {
-    	echo "Errore di accesso";
+  $connection = mysql_connect("$host", "root", "$pwd", "pizzeria");
+
+  if ($connection->connect_error) {
+    die ("Connection failed: " . $connection->connect_error);
   }
   else {
-    $trovate = false;
-    while(!feof($idmiofile) && !$trovate) {
-      $letta=fgets($idmiofile);
-      $dati=explode(";;",$letta);
-      if ($dati[0]==$username && $dati[1]==$password) {
-          $trovate = true;
-          $nome = $dati[2];
-          $_SESSION['login_user']=$nome;
-      }
+    $query = mysql_query("select * from utenti where password='$password' AND username='$username'", $connection);
+    $rows = mysql_num_rows($query);
+    if ($rows == 1) {
+      $_SESSION['login_user']=$username; // Initializing Session
+      header("location: index.php");
     }
   }
 
-  if ($trovate==true)
-    header("location: index.php");
-  else
-    echo "No";
+  mysql_close($connection); // Closing Connection
 
 ?>
