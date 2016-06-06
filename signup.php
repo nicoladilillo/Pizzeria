@@ -5,15 +5,11 @@
   $conferma=$_POST['confermapassword'];
   $nome=$_POST['nome'];
 
-  $host = getenv("MYSQL_HOST");
-  $pwd = getenv("MYSQL_PASSWORD");
-  echo "host: $host e password:$pwd";
+  $host = getEnv('MYSQL_HOST');
+  $pwd = getEnv('MYSQL_PASSWORD');
 
   $connection = mysql_connect("$host", "root", "$pwd", "pizzeria");
-
-  if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-  }
+  mysql_select_db("pizzeria", $connection);
 
   if($password==$conferma) {
     $query = mysql_query("select * from utenti where password='$password' AND username='$username'", $connection);
