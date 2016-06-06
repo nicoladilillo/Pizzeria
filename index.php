@@ -19,7 +19,6 @@
       <a href="#" id="1">Home</a>
       <a href="#" id="2">Pizze</a>
       <a href="#" id="3">Chi siamo</a>
-      <a><?php echo $_SESSION['login_user']; ?></a>
     </div>
 
     <div class="contents">
