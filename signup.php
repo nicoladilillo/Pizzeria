@@ -8,8 +8,12 @@
   $host = getEnv('MYSQL_HOST');
   $pwd = getEnv('MYSQL_PASSWORD');
 
-  $connection = mysql_connect("$host", "root", "$pwd", "pizzeria");
-  mysql_select_db("pizzeria", $connection);
+  $conn = mysql_connect("$host", "root", "$pwd");
+  $db = mysql_select_db("pizzeria", $conn);
+  //Controll connection database
+  if (!$db) {
+    die("Connection failed: " . mysql_error());
+  }
 
   if($password==$conferma) {
     $query = mysql_query("select * from utenti where password='$password' AND username='$username'", $connection);
@@ -19,8 +23,8 @@
       echo "Il contato esiste gia'";
     }
     else {
-      $sq = mysql_query("INSERT INTO utenti (id,username,password,nome) VALUES (NULL,'$username','$password','$nome')");
-      echo "Registrazione eseguita con successo";
+      $sq = mysql_query("INSERT INTO utenti (id,username,password,nome)
+                         VALUES (NULL,'$username','$password','$nome')");
       header("location: index.php");
     }
   }
