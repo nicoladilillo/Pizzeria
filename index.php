@@ -3,14 +3,14 @@
 
   $host = getEnv('MYSQL_HOST');
   $pwd = getEnv('MYSQL_PASSWORD');
-  
+
   $conn = mysql_connect("$host", "root", "$pwd");
   $db = mysql_select_db("pizzeria", $conn);
   //Controll connection database
   if (!$db) {
     die("Connection failed: " . mysql_error());
   }
-  mysql_close($connection);
+  mysql_close($conn);
 ?>
 
 <!DOCTYPE html>

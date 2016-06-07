@@ -1,21 +1,30 @@
-# Pizzeria
-To start do you have to unstall: php, apache2 and mysql.
+Pizzeria
+========
+To start you have to install: php, apache2 and mysql.
 
-##Set Apache
--Go in the apache folder and set the virtual host
- 'sudo nano /etc/apache2/sites-available/000-default.conf'
+Set Apache
+----------
+1. Go in the apache folder and set the virtual host:
+ >sudo nano /etc/apache2/sites-available/000-default.conf
 
--and add this statement:
- 'setEnv MYSQL_HOST "the name host"'
- 'setEnv MYSQL_PASSWORD "the password"'
-Do you have to put your host name and your password
+2. Add this statement:
+ >setEnv MYSQL_HOST "the name host"
+
+ >setEnv MYSQL_PASSWORD "the password"
+
+Do you have to put your host name and your password.
 
 
-##Set Database
--Open mysql as root: 'mysql -u root -p' and insert password;
+Set Database
+----------
+1. Open mysql as root and insert password:
+ >mysql -u root -p
 
--Create a database:
-  'CREATE DATABASE pizzeria';
+2. Create a database:
+ >CREATE DATABASE pizzeria;
 
--Create a table:
-  'CREATE TABLE utenti(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, username varchar(20), password varchar(15), nome varchar(15));'
+3. And next:
+ >USE pizzeria;
+
+4. Create a table for the user:
+ >CREATE TABLE utenti(username varchar(20), password varchar(15), name varchar(15), PRIMARY KEY(username));

@@ -1,9 +1,9 @@
 <?php
 
-  $username=$_POST['user'];
-  $password=$_POST['password'];
-  $conferma=$_POST['confermapassword'];
-  $nome=$_POST['nome'];
+  $username = $_POST['user'];
+  $password = $_POST['password'];
+  $confirmation = $_POST['confermapassword'];
+  $name = $_POST['nome'];
 
   $host = getEnv('MYSQL_HOST');
   $pwd = getEnv('MYSQL_PASSWORD');
@@ -15,23 +15,23 @@
     die("Connection failed: " . mysql_error());
   }
 
-  if($password==$conferma) {
-    $query = mysql_query("select * from utenti where password='$password' AND username='$username'", $connection);
+  if($password==$confirmation) {
+    $query = mysql_query("select * from utenti where username='$username'", $conn);
     $rows = mysql_num_rows($query);
 
     if ($rows == 1) {
-      echo "Il contato esiste gia'";
+      echo "The contact is already existing";
     }
     else {
-      $sq = mysql_query("INSERT INTO utenti (id,username,password,nome)
-                         VALUES (NULL,'$username','$password','$nome')");
+      mysql_close($conn);
+      $sq = mysql_query("INSERT INTO utenti (username,password,name) VALUES ('$username','$password','$name')");
       header("location: index.php");
     }
   }
   else {
-    echo "La password non corrisponde";
+    echo "The password does not match";
   }
 
-  mysql_close($connection); // Closing Connection
+  mysql_close($conn); // Closing Connection
 
 ?>
