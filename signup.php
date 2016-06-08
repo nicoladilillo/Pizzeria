@@ -5,16 +5,7 @@
   $confirmation = $_POST['confermapassword'];
   $name = $_POST['nome'];
 
-  $host = getEnv('MYSQL_HOST');
-  $pwd = getEnv('MYSQL_PASSWORD');
-  $key = getEnv('PASSWORD_SALT');
-
-  $conn = mysql_connect("$host", "root", "$pwd");
-  $db = mysql_select_db("pizzeria", $conn);
-  // Controll connection database
-  if (!$db) {
-    die("Connection failed: " . mysql_error());
-  }
+  include('configure.php');
 
   if($password==$confirmation) {
     $query = mysql_query("select * from utenti where username='$username'", $conn);
