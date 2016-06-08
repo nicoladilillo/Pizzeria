@@ -12,7 +12,13 @@ Set Apache
 
  >setEnv MYSQL_PASSWORD "the password"
 
-Do you have to put your host name and your password.
+ >setEnv PASSWORD_SALT "the salt"
+
+ 3. Restart apache:
+ >sudo service apache2 restart
+
+Do you have to put your host name, your password and your
+salt for the cryptography.
 
 
 Set Database
@@ -27,4 +33,4 @@ Set Database
  >USE pizzeria;
 
 4. Create a table for the user:
- >CREATE TABLE utenti(username varchar(20), password varchar(15), name varchar(15), PRIMARY KEY(username));
+ >CREATE TABLE utenti(username varchar(20), password varchar(40), name varchar(15), PRIMARY KEY(username));

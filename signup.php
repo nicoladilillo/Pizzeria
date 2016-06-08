@@ -7,10 +7,11 @@
 
   $host = getEnv('MYSQL_HOST');
   $pwd = getEnv('MYSQL_PASSWORD');
+  $key = getEnv('PASSWORD_SALT');
 
   $conn = mysql_connect("$host", "root", "$pwd");
   $db = mysql_select_db("pizzeria", $conn);
-  //Controll connection database
+  // Controll connection database
   if (!$db) {
     die("Connection failed: " . mysql_error());
   }
@@ -23,8 +24,11 @@
       echo "The contact is already existing";
     }
     else {
+
+      $password = crypt($password, $key);
       mysql_close($conn);
-      $sq = mysql_query("INSERT INTO utenti (username,password,name) VALUES ('$username','$password','$name')");
+      $sq = mysql_query("INSERT INTO utenti (username,password,name)
+                         VALUES ('$username','$password','$name')");
       header("location: index.php");
     }
   }
