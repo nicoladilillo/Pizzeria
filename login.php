@@ -15,7 +15,7 @@
     die("Connection failed: " . mysql_error());
   }
 
-  $pw = mysql_query("select * from utenti where
+  $pw = mysql_query("select password from utenti where
                         username='$username'", $conn);
 
   if (mysql_num_rows($pw)==1) {

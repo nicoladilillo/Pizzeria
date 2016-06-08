@@ -26,9 +26,9 @@
     else {
 
       $password = crypt($password, $key);
+      mysql_query("INSERT INTO utenti (username,password,name)
+                   VALUES ('$username','$password','$name')");
       mysql_close($conn);
-      $sq = mysql_query("INSERT INTO utenti (username,password,name)
-                         VALUES ('$username','$password','$name')");
       header("location: index.php");
     }
   }
