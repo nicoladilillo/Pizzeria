@@ -2,30 +2,25 @@
 <form action='calcola.php' method='post'>
   <?php
 
-    $idmiofile = fopen("pizze.txt", "r");
-    if (!$idmiofile)
-      echo "Errore di accesso";
+    include('configure.php');
 
-    while(!feof($idmiofile)) {
-      $letta = fgets($idmiofile);
-      $dati = explode(";;",$letta);
-      $dati[0] = strtoupper($dati[0]);
-      if(!empty($dati[0])) {
+    $result = mysql_query("SELECT * FROM pizze");
+    while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+     {
       echo "<div class='elemento'>
-              <img src='$dati[3]'>
-              <div>
-                <div class='descrizione'>
-                  <h2>$dati[0]</h2>
-                  <p>$dati[2]</p>
-                </div>
-                <div class='prezzo'>
-                  <p>$dati[1]$</p>
-                  <input name='$dati[0]' type='number' value='0' />
-                </div>
-              </div>
-            </div>";
-      }
-    }
+               <img src='./assets/images/".$row['image']."'>
+               <div>
+                 <div class='descrizione'>
+                   <h2>".$row['name']."</h2>
+                   <p>".$row['description']."</p>
+                 </div>
+                 <div class='prezzo'>
+                   <p>".$row['price']."</p>
+                   <input name='".$row['name']."' type='number' value='0' />
+                 </div>
+               </div>
+             </div>";
+     }
 
   ?>
   <div class='domicilio'>
