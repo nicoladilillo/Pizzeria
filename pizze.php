@@ -6,7 +6,7 @@
 
     $result = mysql_query("SELECT * FROM pizze");
     while($row = mysql_fetch_array($result, MYSQL_ASSOC))
-     {
+    {
       echo "<div class='elemento'>
                <img src='./assets/images/".$row['image']."'>
                <div>
@@ -15,7 +15,7 @@
                    <p>".$row['description']."</p>
                  </div>
                  <div class='prezzo'>
-                   <p>".$row['price']."</p>
+                   <p>".$row['price']." €</p>
                    <input name='".$row['name']."' type='number' value='0' />
                  </div>
                </div>

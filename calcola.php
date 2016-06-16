@@ -2,18 +2,13 @@
 
   $importo = 0;
 
-  $idmiofile = fopen("pizze.txt", "r");
-  if (!$idmiofile)
-    echo "Errore di accesso";
+  include('configure.php');
 
-  while(!feof($idmiofile)) {
-    $letta = fgets($idmiofile);
-    $dati = explode(";;",$letta);
-    $dati[0] = strtoupper($dati[0]);
-    if(!empty($dati[0])) {
-      $quantita = $_POST[$dati[0]];
-      $importo = $importo + ($quantita*$dati[1]);
-    }
+  $result = mysql_query("SELECT * FROM pizze");
+  while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+  {
+    $quantita = $_POST[$row['name']];
+    $importo = $importo + ($quantita*$row['price']);
   }
 
   if($_POST['consegna'])
