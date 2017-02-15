@@ -1,16 +1,7 @@
 <?php
   session_start();
 
-  $host = getEnv('MYSQL_HOST');
-  $pwd = getEnv('MYSQL_PASSWORD');
-
-  $conn = mysql_connect("$host", "root", "$pwd");
-  $db = mysql_select_db("pizzeria", $conn);
-  //Controll connection database
-  if (!$db) {
-    die("Connection failed: " . mysql_error());
-  }
-  mysql_close($conn);
+  $db = require_once __DIR__.'/configure.php';
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +70,7 @@
       <p>Dilillo Nicola</p>
     </div>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/jquery-3.1.1.min.js"></script>
     <script src="assets/javascript/script.js"></script>
 
   </body>

@@ -2,11 +2,10 @@
 <form action='calcola.php' method='post'>
   <?php
 
-    include('configure.php');
+    $sql = "SELECT * FROM pizze";
+    $sth = $db->query($sql);
 
-    $result = mysql_query("SELECT * FROM pizze");
-    while($row = mysql_fetch_array($result, MYSQL_ASSOC))
-    {
+    foreach ($sth as $row) {
       echo "<div class='elemento'>
                <img src='./assets/images/".$row['image']."'>
                <div>

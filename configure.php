@@ -1,14 +1,13 @@
 <?php
-
-  $host = getEnv('MYSQL_HOST');
-  $pwd = getEnv('MYSQL_PASSWORD');
-  $key = getEnv('PASSWORD_SALT');
-
-  $conn = mysql_connect("$host", "root", "$pwd");
-  $db = mysql_select_db("pizzeria", $conn);
-  // Controll connection database
-  if (!$db) {
-    die("Connection failed: " . mysql_error());
+  $dbHost = 'localhost';
+  $dbName = 'pizzeria';
+  $dbUser = 'vagrant';
+  $dbPass = 'vagrant';
+  try {
+      $db = new PDO("mysql:host={$dbHost};dbname={$dbName};charset=utf8", $dbUser, $dbPass);
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
-
- ?>
+  catch(PDOException $e) {
+      echo 'Connection failed. There was an error: '.$e->getMessage();
+  }
+  return $db;

@@ -5,28 +5,27 @@
   $confirmation = $_POST['confermapassword'];
   $name = $_POST['nome'];
 
-  include('configure.php');
+  $db = require_once __DIR__.'/configure.php';
 
-  if($password==$confirmation) {
-    $query = mysql_query("select * from utenti where username='$username'", $conn);
-    $rows = mysql_num_rows($query);
-
-    if ($rows == 1) {
-      echo "The contact is already existing";
-    }
+  if($password == $confirmation) {
+    $sth = $db->prepare("SELECT password
+                          FROM utenti
+                          WHERE username = :username");
+    $sth->bindValue(':username', "%{$username}%");
+    $sth->execute();
+    $row = $sth->fetchAll(PDO::FETCH_OBJ);
+    if ($row) {
+      echo "L'username esiste già";
+     }
     else {
-
-      $password = crypt($password, $key);
-      mysql_query("INSERT INTO utenti (username,password,name)
-                   VALUES ('$username','$password','$name')");
-      mysql_close($conn);
+      $sql =("INSERT INTO utenti (username, name, password)
+              VALUES ('$username', '$name', '$password')");
+      $db->query($sql);
+      session_start();
+      $_SESSION['login_user']=$username; // Inizializzazione Sessione
       header("location: index.php");
     }
   }
   else {
-    echo "The password does not match";
+    echo "Le password sono diverse";
   }
-
-  mysql_close($conn); // Closing Connection
-
-?>
