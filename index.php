@@ -21,6 +21,18 @@
       <a href="#" id="1">Home</a>
       <a href="#" id="2">Pizze</a>
       <a href="#" id="3">Chi siamo</a>
+      <div display="float: right;">
+        <?php
+          if(isset($_SESSION['login_user'])) {
+            echo $_SESSION['login_user'];
+            echo ", <a href='logout.php'>Esci</a>";
+          }
+          else {
+            echo "<a href='login.html'>Login</a> OR <a href='registrazione.html'>Registrati</a>";
+          }
+        ?>
+      </div>
+
     </div>
 
     <div class="contents">
