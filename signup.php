@@ -18,6 +18,7 @@
       echo "L'username esiste già";
      }
     else {
+      $password = crypt($password, $password);
       $sql =("INSERT INTO utenti (username, name, password)
               VALUES ('$username', '$name', '$password')");
       $db->query($sql);
