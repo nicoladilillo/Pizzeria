@@ -2,6 +2,9 @@
   session_start();
 
   $db = require_once __DIR__.'/configure.php';
+  if(!isset($_SESSION['login_user']))
+    $errore = $_SESSION['errore'];
+  $_SESSION['errore'] = '';
 ?>
 
 <!DOCTYPE html>
@@ -19,16 +22,16 @@
 
     <div class="menu">
       <a href="#" id="1">Home</a>
-      <a href="#" id="2">Pizze</a>
+      <a href="#" class="2">Pizze</a>
       <a href="#" id="3">Chi siamo</a>
-      <div display="float: right;">
+      <div style="float: right;">
         <?php
           if(isset($_SESSION['login_user'])) {
             echo $_SESSION['login_user'];
             echo ", <a href='logout.php'>Esci</a>";
           }
           else {
-            echo "<a href='login.html'>Login</a> OR <a href='registrazione.html'>Registrati</a>";
+            echo "<a href=# class=2>Login</a> OR <a href='signup.php'>Registrati</a>";
           }
         ?>
       </div>
@@ -38,31 +41,35 @@
     <div class="contents">
 
       <div class="home">
-          <img src="./assets/images/pizza_in_forno.jpg" class="prima-immagine">
-          <img src="./assets/images/arredamento_pizzerie.jpg" class="seconda-immagine">
-          <img src="./assets/images/ristorante_e_pizzeria.jpg" class="terza-immagine">
+        <img src="./assets/images/pizza_in_forno.jpg" class="prima-immagine">
+        <img src="./assets/images/arredamento_pizzerie.jpg" class="seconda-immagine">
+        <img src="./assets/images/ristorante_e_pizzeria.jpg" class="terza-immagine">
       </div>
 
-      <div class="pizze">
+      <div class="pizze" >
         <?php
-        if(!isset($_SESSION['login_user'])) {
-          echo "<div class='login'>
-                  <form action='login.php' method='post'>
-                    <input name='username' placeholder='username' type='text' />
-                    <input name='password' placeholder='**********' type='password' />
-                    <div class='accesso'>
-                        <input name='signin' type='submit' value='Sign in' />
-                  </form>
-                    <form action='signup.html'>
-                        <input name='signup' type='submit' value='Sign up' />
+           if(!isset($_SESSION['login_user'])) {
+            echo "<div class='login'>";
+
+            if($errore != '')
+              echo $errore;
+
+            echo "  <form action='login.php' method='post'>
+                      <input name='username' placeholder='username' type='text' />
+                      <input name='password' placeholder='**********' type='password' />
+                      <div class='accesso'>
+                          <input name='signin' type='submit' value='Sign in' />
                     </form>
-                    </div>
-                </div>";
+                      <form action='signup.html'>
+                          <input name='signup' type='submit' value='Sign up' />
+                      </form>
+                      </div>
+                  </div>";
+          }
+          else {
+            include('pizze.php');
         }
-        else {
-          include('pizze.php');
-        }
-        ?>
+      ?>
       </div>
 
       <div class="who-we-are">

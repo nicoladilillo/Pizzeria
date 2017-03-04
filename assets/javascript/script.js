@@ -11,7 +11,7 @@ $(document).ready(function(){
     $(".home").show(100);
   });
 
-  $("#2").click(function() {
+  $(".2").click(function() {
     $(".home").hide(100);
     $(".who-we-are").hide(100);
     $(".pizze").show(100);
