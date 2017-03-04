@@ -7,10 +7,10 @@
 
     foreach ($sth as $row) {
       echo "<div class='elemento'>
-               <img src='./assets/images/".$row['image']."'>
+               <img src='./assets/images/".$row['name'].".jpg'>
                <div>
                  <div class='descrizione'>
-                   <h2>".$row['name']."</h2>
+                   <h2>".strtoupper($row['name'])."</h2>
                    <p>".$row['description']."</p>
                  </div>
                  <div class='prezzo'>
