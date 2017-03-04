@@ -23,4 +23,21 @@ $(document).ready(function(){
     $(".who-we-are").show(100);
   });
 
+  function Errore(string, e) {
+      window.alert(string);
+      e.preventDefault(e);
+  }
+
+  //Check empty field
+  $("form").submit(function(e){
+    var i = 0;
+    var valori = [];
+    $('input').each(function() {
+      if ( !$(this).val() ) {
+        Errore("Riempi tutti i campi!", e);
+        return false;
+      }
+    });
+  });
+
 });
