@@ -2,13 +2,16 @@
 
   $importo = 0;
 
-  include('configure.php');
+  $db = require_once __DIR__.'/configure.php';
 
-  $result = mysql_query("SELECT * FROM pizze");
-  while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+  $sth = $db->prepare("SELECT * FROM pizze");
+  $sth->execute();
+  $row = $sth->fetchAll(PDO::FETCH_OBJ);
+
+  foreach ($row as $pizza)
   {
-    $quantita = $_POST[$row['name']];
-    $importo = $importo + ($quantita*$row['price']);
+    $quantita = $_POST[$pizza->name];
+    $importo = $importo + ($quantita*$pizza->price);
   }
 
   if($_POST['consegna'])
