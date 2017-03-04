@@ -14,6 +14,7 @@
     <meta charset="utf-8">
     <title>Pizzeria</title>
     <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="icon" href="assets/images/Pizza-icon.png">
   </head>
 
   <body>

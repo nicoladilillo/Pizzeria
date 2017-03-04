@@ -13,6 +13,7 @@
     <meta charset="utf-8">
     <title>Sign up</title>
     <link rel="stylesheet" href="assets/css/signup.css">
+    <link rel="icon" href="assets/images/Pizza-icon.png">
   </head>
 
   <body>
