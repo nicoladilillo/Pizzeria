@@ -2,8 +2,10 @@
   session_start();
 
   $db = require_once __DIR__.'/configure.php';
-  if(!isset($_SESSION['login_user']))
+  if(isset($_SESSION['login_user']))
     $errore = $_SESSION['errore'];
+  else
+    $errore = '';
   $_SESSION['errore'] = '';
 ?>
 
