@@ -32,12 +32,28 @@ $(document).ready(function(){
   $("form").submit(function(e){
     var i = 0;
     var valori = [];
+
     $('input').each(function() {
       if ( !$(this).val() ) {
         Errore("Riempi tutti i campi!", e);
         return false;
       }
     });
+
+    $('input[type=number]').each(function() {
+      if ( $(this).val()<0 ) {
+        Errore("Immetti solo valoti positivi", e);
+        return false;
+      }
+    });
+
+    $('input[type=radio]').each(function() {
+      if ( !$(this).val() ) {
+        Errore("Vorresti essere consegnata la pizza?", e);
+        return false;
+      }
+    });
+
   });
 
 });

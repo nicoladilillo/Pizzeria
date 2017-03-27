@@ -1,0 +1,28 @@
+.calcola {
+	padding: 100px 20px;
+    background: rgba(109, 102, 95, 0.15);
+    margin: 0 20%;
+    text-align: center;
+}
+
+.calcola img {	
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.calcola button {
+	height: 35px;
+    width: 70px;
+    border: 0;
+    border-radius: 4px;
+    background-color: rgb(171, 21, 10);
+}
+
+.calcola p:first-child {
+	font-size: 1.5em;
+}
+
+.calcola p {
+	font-size: 2.5em;
+}

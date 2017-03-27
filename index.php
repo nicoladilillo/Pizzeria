@@ -15,6 +15,7 @@
   <head>
     <meta charset="utf-8">
     <title>Pizzeria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/mystyle.css">
     <link rel="icon" href="assets/images/Pizza-icon.png">
   </head>
